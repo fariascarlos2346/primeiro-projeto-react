@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import {
+   Container,
+   Image,
+   ConteinerItens,
+   H1,
+   H2,
+   P,
+   InputLabel,
+   Input,
+   Button 
+} from "./styles";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Image />
+      <H1>Sou Carlos Henrique estou migrando de carreira, varias decadas como motorista e agora entrando no mundo da programação, adquirindo experiência a três anos.</H1>
+      <H2>Estou cursando Analise e Desenvolvimento de Sistemas no ultimo semestre, também estou na formação do DevClub para desenvolvedor Full Stack, ja conclui varios modolos dentre eles, HTML,CSS,Javascript,Node-js,React e neste periodo ja realizei diversos projetos.</H2>
+      <P>Muitos dos meus projetos estão no https://github.com/fariascarlos2346 e meu linkedin para maiores informações https://www.linkedin.com/in/carloshenrique-web/. </P>
+
+
+      <ConteinerItens>
+        <InputLabel>Nome</InputLabel>
+        <Input placeholder="Nome"/>
+
+        <InputLabel>Idade</InputLabel>
+        <Input placeholder="Idade"/>
+
+        <Button>Contato</Button>
+      </ConteinerItens>
+
+    </Container>
   );
 }
 
-export default App;
+export default App

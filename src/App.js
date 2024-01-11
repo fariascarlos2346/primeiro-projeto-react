@@ -16,6 +16,12 @@ import {
 
 
 function App() {
+  const users = [
+    { id: Math.random(), name:"Lusia", age: 51}, 
+    { id: Math.random(), name:"Carlos", age: 48},
+  ];
+
+
   return (
     <Container>
       <Image alt="Logo-Desenvolvedor" src={Logo03}/>
@@ -31,7 +37,17 @@ function App() {
         <InputLabel>Idade</InputLabel>
         <Input placeholder="Idade"/>
 
-        <Button>Contato<img alt="seta" src={Arrow} /></Button>
+        <Button>
+          Contato<img alt="seta" src={Arrow} />
+        </Button>
+
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>
+              {user.name} - {user.age}
+            </li>
+          ))}
+        </ul>
       </ConteinerItens>
 
     </Container>

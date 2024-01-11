@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo03 from './assets/logo03.png'
+import Arrow from './assets/arrow.png'
 
 import {
    Container,
@@ -30,7 +31,7 @@ function App() {
         <InputLabel>Idade</InputLabel>
         <Input placeholder="Idade"/>
 
-        <Button>Contato</Button>
+        <Button>Contato<img alt="seta" src={Arrow} /></Button>
       </ConteinerItens>
 
     </Container>

@@ -1,6 +1,8 @@
-import React from 'react';
-import Logo03 from './assets/logo03.png'
-import Arrow from './assets/arrow.png'
+import React, { useState } from 'react';
+
+import Logo03 from './assets/logo03.png';
+import Arrow from './assets/arrow.png';
+import Trash from './assets/trash.png';
 
 import {
    Container,
@@ -11,16 +13,31 @@ import {
    P,
    InputLabel,
    Input,
-   Button 
+   Button,
+   User 
 } from "./styles";
 
 
 function App() {
-  const users = [
-    { id: Math.random(), name:"Lusia", age: 51}, 
-    { id: Math.random(), name:"Carlos", age: 48},
-  ];
+  //const users = [];
+  const [ users, setUsers ] = useState([]);
+  const [ name, setName ] = useState();
+  const [ age, setAge ] = useState();
 
+  //React Hooks => Ferramentas auxiliares
+
+  function addNewUser(){
+    setUsers([{id: Math.random(), name, age}])
+    
+  }
+
+  function changeInputName(event){
+    setName(event.target.value)
+  }
+
+  function changeInputAge(event){
+    setName(event.target.value)
+  }
 
   return (
     <Container>
@@ -32,20 +49,21 @@ function App() {
 
       <ConteinerItens>
         <InputLabel>Nome</InputLabel>
-        <Input placeholder="Nome"/>
+        <Input onChange={changeInputName} placeholder="Nome"/>
 
         <InputLabel>Idade</InputLabel>
-        <Input placeholder="Idade"/>
+        <Input onChange={changeInputAge} placeholder="Idade"/>
 
-        <Button>
+        <Button onClick={addNewUser}>
           Contato<img alt="seta" src={Arrow} />
         </Button>
 
         <ul>
           {users.map((user) => (
-            <li key={user.id}>
-              {user.name} - {user.age}
-            </li>
+            <User key={user.id}>
+              <p>{user.name}</p> - <p>{user.age}</p>
+              <button><img src={Trash} alt="lata-de-lixo"/></button>
+            </User>
           ))}
         </ul>
       </ConteinerItens>

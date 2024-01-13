@@ -71,6 +71,7 @@ export const InputLabel = styled.p `
    line-height: 22px;
    color: black;
    margin-left: 25px;
+   margin-top: 30px;
 `;
 
 export const Input = styled.input `
@@ -99,6 +100,7 @@ export const Button = styled.button `
    background: rgba(0, 0, 0, 0.8);
    border-radius: 15px;
    border: none;
+   margin-top: 30px;
 
    font-style: normal;
    font-weight: bold;

@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 
+import axios from 'axios'
+
 import Logo03 from './assets/logo03.png';
 import Arrow from './assets/arrow.png';
 import Trash from './assets/trash.png';
@@ -17,6 +19,7 @@ import {
    User 
 } from "./styles";
 
+//Saber consumir APi´s utilizando o Axios
 
 function App() {
   //const users = [];
@@ -37,7 +40,9 @@ function App() {
   }
 
   function deleteUser(userId){
-    console.log(userId)
+    const newUsers = users.filter( user => user.id !== userId)
+
+    setUsers(newUsers)
   }
 
   return (
